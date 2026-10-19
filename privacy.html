@@ -39,10 +39,10 @@
       retention, impressions and click-through rate;</li>
     <li>comments posted by the channel itself on its own videos.</li>
   </ul>
-  <p>Permissions requested: <code>youtube</code>, <code>youtube.upload</code>, <code>youtube.force-ssl</code>, <code>youtube.readonly</code> and
-    <code>yt-analytics.readonly</code>.</p>
-  <p>Corte-Editor may also read limited public information about a third-party YouTube video (such as its title,
-    channel and link) when a clip comes from it, in order to prepare the clip and credit the full video.</p>
+  <p>Permissions requested: <code>youtube</code>, <code>youtube.force-ssl</code> and <code>yt-analytics.readonly</code>.</p>
+  <p>Corte-Editor may also read limited public information about third-party YouTube videos through the YouTube API
+    (such as title, channel and public statistics), to research topics and to credit the full video a clip comes
+    from.</p>
 
   <h2>How we use the data</h2>
   <ul>
@@ -63,12 +63,16 @@
   <ul>
     <li>All data is stored only on the owner's own computer, in a local database and local files. Corte-Editor has no
       server that stores YouTube data.</li>
-    <li>Google access tokens are stored locally and are never shared.</li>
-    <li>Data about the channel's own videos is refreshed at least every 30 days and deleted when the video is removed
-      from the channel.</li>
+    <li>Google access tokens are stored locally, outside any cloud-synced folder, and are never shared.</li>
+    <li>Data about the channel's own videos is refreshed at least every 30 days. When a video is removed from the
+      channel, its data is deleted, except a summarized learning result (whether the clip performed above or below the
+      channel's usual results), which is derived from analytics data and kept only while the channel remains
+      authorized.</li>
     <li>Analytics and reporting data is kept to compare performance over time, and Corte-Editor confirms that it is
       still authorized to access it at least every 30 days.</li>
-    <li>Public data about third-party videos is not stored for more than 30 days unless it is refreshed.</li>
+    <li>Public data about third-party videos obtained through the YouTube API is deleted after at most 30 days.</li>
+    <li>Database backups are kept for a short period, so that every deletion described here also reaches the backups
+      within 7 calendar days.</li>
   </ul>
 
   <h2>Revoking access and deleting data</h2>
